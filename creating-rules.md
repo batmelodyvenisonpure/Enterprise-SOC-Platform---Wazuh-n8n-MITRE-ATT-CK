@@ -22,9 +22,9 @@ What it detects: PowerShell downloading files from the internet (common malware 
 Invoke-AtomicTest T1059.001
 ```
 
-powershell -Command "Invoke-WebRequest -Uri 'https://example.com' -OutFile C:\temp\test.txt"
 # Rule 100002 - Mimikatz Credential Dumping (T1003.001)
-xml
+
+```bash
 <group name="credential-access,mimikatz,critical,custom,">
   <rule id="100002" level="14">
     <if_group>windows|sysmon</if_group>
@@ -35,14 +35,18 @@ xml
     </mitre>
   </rule>
 </group>
+```
 What it detects: Mimikatz commands used to dump passwords from memory
 
-Test Command (safe simulation):
+## Test Command:
 
-powershell
-echo "sekurlsa::logonpasswords" > C:\temp\test.txt
+```bash
+Invoke-AtomicTest T1003.001
+```
+
 # Rule 100003 - Windows Defender Disable Attempt (T1562.001)
-xml
+
+```bash
 <group name="defense-evasion,defender-tampering,critical,custom,">
   <rule id="100003" level="12">
     <if_group>windows|sysmon</if_group>
@@ -53,14 +57,20 @@ xml
     </mitre>
   </rule>
 </group>
+```
+
 What it detects: Attackers trying to turn off Windows Defender
 
-Test Command (safe version - doesn't actually disable):
+## Test Command (Do a VM Snapshot before running this command):
 
-powershell
-powershell -Command "Get-MpPreference | Select-Object DisableRealtimeMonitoring"
+```bash
+Invoke-AtomicTest T1562.001
+```
+WARNING: This Atomic Red Team script disables all security features, including Windows Defender and Sysmon (without Sysmon it won't be able to trigger alerts via Wazuh), and swaps processes such as Event Viewer, Computer Management, and Task Manager with Calculator.
+
 # Rule 100004 - Scheduled Task Persistence (T1053.005)
-xml
+
+```bash
 <group name="persistence,scheduled-task,custom,">
   <rule id="100004" level="8">
     <if_group>windows|sysmon</if_group>
@@ -72,14 +82,19 @@ xml
     </mitre>
   </rule>
 </group>
+```
+
 What it detects: Creation of scheduled tasks (common persistence mechanism)
 
-Test Command:
+## Test Command:
 
-powershell
-schtasks /create /tn "TestTask" /tr "calc.exe" /sc once /st 00:00 /f
+```bash
+Invoke-AtomicTest T1053.005
+```
+
 # Rule 100005 - Netcat C2 Connection (T1095)
-xml
+
+```bash
 <group name="command-and-control,netcat,c2,critical,custom,">
   <rule id="100005" level="12">
     <if_group>windows|sysmon</if-group>
@@ -92,9 +107,17 @@ xml
     </mitre>
   </rule>
 </group>
+```
+
 What it detects: Netcat/ncat connections used for C2 communication
 
-Test Command (if netcat installed):
+## Test Command :
+
+```bash
+nc.exe 127.0.0.1 4444
+```
+
+
 
 powershell
 nc.exe -e cmd.exe 127.0.0.1 4444
