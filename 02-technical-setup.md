@@ -1,5 +1,3 @@
-🛠️ Technical Setup
-
 # Wazuh 4.7 Installation on Ubuntu
 
 [![Wazuh](https://img.shields.io/badge/Wazuh-4.7-blue.svg)](https://wazuh.com)
@@ -20,7 +18,7 @@ Before starting the installation, ensure your system meets the following require
 curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh
 sudo bash ./wazuh-install.sh -a
 
-# Add custom rules
+## Add custom rules
 sudo nano /var/ossec/etc/rules/local_rules.xml
 # Paste all 5 rules above
 
