@@ -13,7 +13,7 @@
 | n8n+TheHive      | 192.168.0.185 | 8GB | 2 cores   | 50GB    | Active  | SOAR + Cases        |
 | Kali Linux       | N/A           | N/A | N/A       | N/A     | Planned | Pentest Project     |
 
-## VM Resource Summary
+## Network Communication
 
 | Source | Destination | Port | Protocol | Purpose |
 |--------|-------------|------|----------|---------|
