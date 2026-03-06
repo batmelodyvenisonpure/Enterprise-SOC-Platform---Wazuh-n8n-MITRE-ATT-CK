@@ -14,20 +14,34 @@ Before starting the installation, ensure your system meets the following require
 
 ## 🚀 Quick Installation
 
+### Step 1: Download the Installation Script
+
 ```bash
 curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh
 sudo bash ./wazuh-install.sh -a
+```
+
+### Step 2: Creating custom rules
 
 ## Add custom rules
-sudo nano /var/ossec/etc/rules/local_rules.xml
-# Paste all 5 rules above
 
-# Restart Wazuh
+```bash
+sudo nano /var/ossec/etc/rules/local_rules.xml
+```
+
+# Paste all 5 rules present in creating-rules.md
+
+### Step 3: Restarting Wazuh-Manager Service on Ubuntu Machine in order to apply the changes.
+
+```bash
 sudo systemctl restart wazuh-manager
-Windows Agent Configuration
-powershell
-# Install agent via Powershell
-Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.7.5-1.msi -OutFile ${env.tmp}\wazuh-agent; msiexec.exe /i ${env.tmp}\wazuh-agent /q WAZUH_MANAGER='192.168.0.177' WAZUH_AGENT_NAME='VULN-WIN' WAZUH_REGISTRATION_SERVER='192.168.0.177' 
+```
+
+### Step 4: Installing Wazuh Agent on Windows Machine using Powershell
+
+```bash
+Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.7.5-1.msi -OutFile ${env.tmp}\wazuh-agent; msiexec.exe /i ${env.tmp}\wazuh-agent /q WAZUH_MANAGER='192.168.0.177' WAZUH_AGENT_NAME='VULN-WIN' WAZUH_REGISTRATION_SERVER='192.168.0.177'
+```
 
 # Add Sysmon
 .\Sysmon64.exe -accepteula -i sysmon-config.xml
