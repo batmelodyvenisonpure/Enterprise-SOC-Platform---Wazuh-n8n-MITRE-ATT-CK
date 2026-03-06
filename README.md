@@ -22,7 +22,7 @@ The platform integrates **SIEM, SOAR, and Case Management** capabilities with **
 
 ### Why I Built This
 
-As a IT Administrator transitioning into security operations, I created this project to:
+As a IT Administrator transitioning into security, I created this project to:
 
 - **Bridge the gap** between theoretical knowledge and hands-on implementation
 - **Demonstrate practical skills** in SIEM deployment, detection engineering, and SOAR automation
