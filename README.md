@@ -10,22 +10,63 @@
 ![Atomic Red Team](https://img.shields.io/badge/Testing-Atomic%20Red%20Team-FF6F61?style=for-the-badge&logo=redhat&logoColor=white)
 
 ## Project Overview
-A complete Security Operations Center (SOC) platform built from scratch that simulates a real-world enterprise security environment. This project demonstrates my ability to deploy, configure, and automate security operations using industry-standard tools and frameworks.
 
-The platform integrates SIEM, SOAR, and Case Management capabilities with 5 custom detection rules mapped to the MITRE ATT&CK framework, all automated through n8n workflows.
+A complete **Security Operations Center (SOC) platform** built from scratch that simulates a real-world enterprise security environment. This project demonstrates my ability to deploy, configure, and automate security operations using industry-standard tools and frameworks.
+
+The platform integrates **SIEM, SOAR, and Case Management** capabilities with **5 custom detection rules** mapped to the MITRE ATT&CK framework, all automated through n8n workflows.
+
+---
 
 ## Purpose & Goals
-Why I Built This? As a System Administrator transitioning into security, I created this project to:
 
--Bridge the gap between theoretical knowledge and hands-on implementation
--Demonstrate practical skills in SIEM deployment, detection engineering, and SOAR automation
--Build a portfolio that proves I can design and operate enterprise security tools
--Understand the full attack lifecycle from detection to response
+### Why I Built This
 
-## Goal	Status	Description
-✅ SIEM Implementation	Complete	Wazuh deployed with Windows endpoint
-✅ Custom Detection Rules	Complete	5 rules across 5 MITRE tactics
-✅ SOAR Automation	Complete	n8n workflows for alert processing
-✅ Case Management	Complete	TheHive for incident tracking
-✅ Threat Intelligence	Complete	VirusTotal + AbuseIPDB integration
-⏳ Penetration Testing	Planned	Kali Linux for red team exercises
+As a System Administrator transitioning into security operations, I created this project to:
+
+- **Bridge the gap** between theoretical knowledge and hands-on implementation
+- **Demonstrate practical skills** in SIEM deployment, detection engineering, and SOAR automation
+- **Build a portfolio** that proves I can design and operate enterprise security tools
+- **Understand the full attack lifecycle** from detection to response
+
+---
+
+## Project Status
+
+| Goal | Status | Description |
+|------|--------|-------------|
+| SIEM Implementation | ✅ Complete | Wazuh deployed with Windows endpoint |
+| Custom Detection Rules | ✅ Complete | 5 rules across 5 MITRE tactics |
+| SOAR Automation | ✅ Complete | n8n workflows for alert processing |
+| Case Management | ✅ Complete | TheHive for incident tracking |
+| Threat Intelligence | ✅ Complete | VirusTotal + AbuseIPDB integration |
+| Penetration Testing | ⏳ Planned | Kali Linux for red team exercises |
+
+---
+
+## Key Achievements
+
+| Achievement | Details |
+|-------------|---------|
+| **Custom Detection Rules** | 5 rules mapped to MITRE ATT&CK |
+| **MITRE Tactics Covered** | Execution, Credential Access, Defense Evasion, Persistence, C2 |
+| **SOAR Workflows** | 5 automated n8n workflows |
+| **Incident Management** | TheHive case creation and tracking |
+| **Threat Intelligence** | VirusTotal and AbuseIPDB integration |
+| **Response Time** | < 5 seconds from alert to notification |
+
+---
+
+## Technology Stack
+
+| Category | Tools |
+|----------|-------|
+| **SIEM** | Wazuh (Manager, Agent, Dashboard) |
+| **Endpoint Security** | Sysmon, Windows Event Logs |
+| **SOAR/Automation** | n8n |
+| **Case Management** | TheHive |
+| **Threat Intelligence** | VirusTotal API, AbuseIPDB API |
+| **Attack Simulation** | Atomic Red Team, MITRE ATT&CK |
+| **Operating Systems** | Ubuntu 24.04, Windows 10, Kali Linux (planned) |
+| **Virtualization** | Proxmox Virtual Environment|
+
+---
