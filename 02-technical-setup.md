@@ -3,6 +3,12 @@
 ![Wazuh](https://img.shields.io/badge/SIEM-Wazuh-005571?style=for-the-badge&logo=wazuh&logoColor=white)
 ![TheHive](https://img.shields.io/badge/Case%20Management-TheHive-FF6C37?style=for-the-badge&logo=thehive&logoColor=white)
 ![n8n](https://img.shields.io/badge/SOAR-n8n-3b0a6b?style=for-the-badge&logo=n8n&logoColor=white)
+![VirusTotal](https://img.shields.io/badge/Threat%20Intel-VirusTotal-394eef?style=for-the-badge&logo=virustotal&logoColor=white)
+![AbuseIPDB](https://img.shields.io/badge/Reputation-AbuseIPDB-7b1fa2?style=for-the-badge&logo=abuseipdb&logoColor=white)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
+![Windows](https://img.shields.io/badge/Windows-10-0078D6?style=for-the-badge&logo=windows&logoColor=white)
+![MITRE ATT&CK](https://img.shields.io/badge/Framework-MITRE%20ATT%26CK-000000?style=for-the-badge&logo=mitre&logoColor=white)
+![Atomic Red Team](https://img.shields.io/badge/Testing-Atomic%20Red%20Team-FF6F61?style=for-the-badge&logo=redhat&logoColor=white)
 
 ## Prerequisites
 
