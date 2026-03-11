@@ -149,6 +149,46 @@ Allow Port 5678 on Firewall
 sudo ufw allow 5678
 ```
 
+### Step 9: n8n integration in Wazuh
+
+Copy the Wrapper Script from the project.
+
+```bash
+sudo su
+cd /var/ossec/integrations/
+wget https://github.com/batmelodyvenisonpure/EnterpriseSOCPlatform-Wazuh-n8n-TheHive/blob/main/custom-n8n
+```
+Also the Python Script.
+
+```bash
+wget https://github.com/batmelodyvenisonpure/EnterpriseSOCPlatform-Wazuh-n8n-TheHive/blob/main/custom-n8n.py
+```
+
+Setting proper permissions
+
+```bash
+sudo chmod 750 /var/ossec/integrations/custom-n8n.py
+sudo chown root:wazuh /var/ossec/integrations/custom-n8n.py
+sudo chmod 750 /var/ossec/integrations/custom-n8n
+sudo chown root:wazuh /var/ossec/integrations/custom-n8n
+```
+
+Enabling the integration
+
+```bash
+sudo nano /var/ossec/etc/ossec.conf
+```
+
+Added:
+
+```bash
+<integration>
+  <name>custom-n8n</name>
+  <hook_url>http://192.168.0.185:5678/webhook/wazuh-alerts</hook_url>
+  <level>8</level>
+  <alert_format>json</alert_format>
+</integration>
+```
 
 
 
