@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Log raw arguments for debugging
+echo "$(date) - RAW: $@" >> /var/ossec/logs/integrations.log
+
+# Clean up the arguments - remove empty ones
+CLEAN_ARGS=""
+for arg in "$@"; do
+    if [ ! -z "$arg" ] && [ "$arg" != ">" ] && [ "$arg" != "/dev/null" ] && [ "$arg" != "2>&1" ]; then
+        CLEAN_ARGS="$CLEAN_ARGS \"$arg\""
+    fi
+done
+
+echo "$(date) - CLEANED: $CLEAN_ARGS" >> /var/ossec/logs/integrations.log
+
+# Run the Python script
+eval /var/ossec/framework/python/bin/python3 /var/ossec/integrations/custom-n8n.py $CLEAN_ARGS
